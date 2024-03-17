@@ -53,3 +53,22 @@
     </script>
 </body>
 </html>
+<script>
+    // JavaScript code to handle file uploading and listing
+    document.getElementById('upload-button').addEventListener('click', function() {
+        document.getElementById('file-input').click();
+    });
+
+    document.getElementById('file-input').addEventListener('change', function(event) {
+        var fileList = event.target.files;
+        var fileListContainer = document.getElementById('file-list');
+        fileListContainer.innerHTML = ''; // Clear previous file list
+
+        for (var i = 0; i < fileList.length; i++) {
+            var fileItem = document.createElement('div');
+            fileItem.classList.add('file-item');
+            fileItem.textContent = fileList[i].name;
+            fileListContainer.appendChild(fileItem);
+        }
+    });
+</script>
